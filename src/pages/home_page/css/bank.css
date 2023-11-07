@@ -1,0 +1,17 @@
+.bank_item {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+}
+
+.div_img {
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}

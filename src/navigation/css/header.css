@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    border-bottom: 1px solid green;
+}
+
+li {
+    list-style: none;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+}
+
+.header_links {
+    display: flex;
+    width: 500px;
+    padding-top: 25px;
+    justify-content: space-around;
+}
