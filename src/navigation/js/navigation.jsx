@@ -9,6 +9,8 @@ import {
 import Catalog from "../../pages/catalog_page/catalog";
 import Cart from "../../pages/cart_page/cart";
 import Home from "../../pages/home_page/home";
+import CardPage from "../../pages/card_page/card_page";
+import Checkout from "../../pages/checkout_page/checkout";
 
 import logo from "../../assets/images/logo.png";
 import "../css/header.css";
@@ -20,7 +22,6 @@ const Navigation = () => (
       <div className="header_links">
         <li>
           <NavLink
-            exact
             to="/"
             className={({ isActive }) =>
               isActive ? "selected" : "not-selected"
@@ -31,7 +32,6 @@ const Navigation = () => (
         </li>
         <li>
           <NavLink
-            exact
             to="/catalog"
             className={({ isActive }) =>
               isActive ? "selected" : "not-selected"
@@ -42,7 +42,6 @@ const Navigation = () => (
         </li>
         <li>
           <NavLink
-            exact
             to="/cart"
             className={({ isActive }) =>
               isActive ? "selected" : "not-selected"
@@ -54,9 +53,11 @@ const Navigation = () => (
       </div>
     </header>
     <Routes>
-      <Route path="/" Component={Home} />
-      <Route path="/catalog" Component={Catalog} />
-      <Route path="/cart" Component={Cart} />
+      <Route path="/" element={<Home />} />
+      <Route path="/catalog" element={<Catalog />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/card/:id" element={<CardPage />} />
     </Routes>
   </Router>
 );

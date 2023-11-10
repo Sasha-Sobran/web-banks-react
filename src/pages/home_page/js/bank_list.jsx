@@ -1,49 +1,48 @@
 import React, { useState, useEffect } from "react";
 import "../css/bank_list.css";
-import BankListDiv from "./bank_div";
+import BankListDiv from "../js/bank_div";
+import ShowMoreButton from "./show_more_btn";
+import getWaifus from "../../../api";
 
 const BankList = () => {
   const [items, setItems] = useState([]);
   const [isViewMore, setIsViewMore] = useState(false);
 
   useEffect(() => {
-    async function fetchBanks() {
-      try {
-        const response = await fetch("http://127.0.0.1:5000/banks");
-        const data = await response.json();
-        setItems(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-
-    fetchBanks();
+    getWaifus().then((data) => {
+      setItems(data);
+    });
   }, []);
 
   const toggle = () => {
     setIsViewMore(!isViewMore);
-    const element = document.getElementsByClassName("bank_list")[0];
+    const element = document.getElementsByClassName("bank_list1")[0];
     if (!isViewMore) {
-      let size = Math.ceil((items.length / 5) * 400) + "px";
+      const size = Math.ceil((items.length / 5) * 450) + "px";
       element.style.height = size;
     } else {
-      element.style.height = "400px";
+      element.style.height = "420px";
     }
   };
 
   return (
     <div className="second_section">
-      <div className="bank_list">
-        {isViewMore
-          ? items.map((item) => BankListDiv(item.id, item))
-          : items.slice(0, 5).map((item) => BankListDiv(item.id, item))}
-      </div>
-      <div className="button_div">
-        {isViewMore ? (
-          <button onClick={toggle}>View less</button>
+      <div className="bank_list1">
+        {items.length > 0 ? (
+          isViewMore ? (
+            items.map((item) => BankListDiv(item.id, item))
+          ) : (
+            items.slice(0, 5).map((item) => BankListDiv(item.id, item))
+          )
         ) : (
-          <button onClick={toggle}>View more</button>
+          <div className="loader">Loading...</div>
         )}
+      </div>
+
+      <div className="button_div">
+        {isViewMore
+          ? ShowMoreButton(toggle, "Hide")
+          : ShowMoreButton(toggle, "View more")}
       </div>
     </div>
   );

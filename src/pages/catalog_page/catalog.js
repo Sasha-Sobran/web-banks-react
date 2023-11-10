@@ -1,5 +1,11 @@
+import BankList from "./js/bank_list";
+
 const Catalog = () => {
-  return <div>Catalog page</div>;
+  return (
+    <div>
+      <BankList />;
+    </div>
+  );
 };
 
 export default Catalog;
