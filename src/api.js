@@ -32,21 +32,6 @@ export async function getFilteredByAge(age) {
   return response.data;
 }
 
-export async function getSortedByName() {
-  const response = await http.get("waifus/name_sort");
-  return response.data;
-}
-
-export async function getSortedByAge() {
-  const response = await http.get("waifus/age_sort");
-  return response.data;
-}
-
-export async function getSortedByPrice() {
-  const response = await http.get("waifus/price_sort");
-  return response.data;
-}
-
 export async function searchWaifus(query) {
   const response = await http.get(`waifus/search?query=${query}`);
   return response.data;
