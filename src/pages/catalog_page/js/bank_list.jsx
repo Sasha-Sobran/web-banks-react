@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../css/bank_list.css";
 import BankCard from "./bank_card";
 import NextButton from "./next_btn";
@@ -30,11 +30,13 @@ const BankList = () => {
   const endIdx = startIdx + itemsPerPage;
   const displayItems = items.slice(startIdx, endIdx);
 
-  useEffect(() => {
+  const allItems = useCallback(() => {
     getWaifus().then((data) => {
       setItems(data);
     });
+  }, []);
 
+  useEffect(() => {
     getAges().then((data) => {
       setAges(data["ages"]);
     });
@@ -48,9 +50,7 @@ const BankList = () => {
     if (activeFilter !== "None") {
       if (activeFilter === "Age") {
         if (selectedAgeFilter === "None") {
-          getWaifus().then((data) => {
-            setItems(data);
-          });
+          allItems();
         } else {
           getFilteredByAge(selectedAgeFilter).then((data) => {
             setSelectedPriceFilter("None");
@@ -59,9 +59,7 @@ const BankList = () => {
         }
       } else if (activeFilter === "Price") {
         if (selectedPriceFilter === "None") {
-          getWaifus().then((data) => {
-            setItems(data);
-          });
+          allItems();
         } else {
           setSelectedAgeFilter("None");
           getFilteredByPrice(selectedPriceFilter).then((data) => {
@@ -71,7 +69,7 @@ const BankList = () => {
       }
     }
     setCurrentPage(1);
-  }, [activeFilter, selectedPriceFilter, selectedAgeFilter]);
+  }, [activeFilter, selectedPriceFilter, selectedAgeFilter, allItems]);
 
   function handleClickNext() {
     if (currentPage * itemsPerPage < items.length) {
@@ -90,9 +88,7 @@ const BankList = () => {
     setSelectedAgeFilter("None");
     setSelectedPriceFilter("None");
     setSearchValue("");
-    getWaifus().then((data) => {
-      setItems(data);
-    });
+    allItems();
   }
 
   function apply() {

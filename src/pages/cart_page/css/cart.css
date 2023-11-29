@@ -6,7 +6,32 @@
 }
 
 .buttons2 {
-    display: flex;
-    width: 800px;
-    justify-content: space-between;
+  display: flex;
+  width: 800px;
+  justify-content: space-between;
+}
+
+.waifu_cart_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+  height: 110px;
+  margin-bottom: 10px;
+  background-color: blueviolet;
+}
+
+.remove_button {
+  width: 50px;
+}
+
+.text_div2 {
+  display: flex;
+  flex-direction: row;
+  width: 50px;
+}
+
+.cart_image {
+  height: 100px;
 }

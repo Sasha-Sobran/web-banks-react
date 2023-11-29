@@ -1,8 +1,3 @@
-import monobank from "./assets/images/monobank.jfif";
-import pryvatbank from "./assets/images/pryvatbank.png";
-import ukraine from "./assets/images/ukraine.png";
-import oshchadbank from "./assets/images/oshchadbank.jfif";
-
 import arima from "./assets/anime_images/arima.jfif";
 import asuna from "./assets/anime_images/asuna.jfif";
 import eris from "./assets/anime_images/eris.jfif";
@@ -55,11 +50,4 @@ export const anime_images = {
   kitagawa: kitagawa,
   tsunade: tsunade,
   secre: secre,
-};
-
-export const images = {
-  monobank: monobank,
-  pryvatbank: pryvatbank,
-  ukraine: ukraine,
-  oshchadbank: oshchadbank,
 };
