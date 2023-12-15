@@ -20,9 +20,13 @@ const Cart = () => {
         <NavLink className="cart_page_button" to={`/catalog`}>
           Back To Catalog
         </NavLink>
-        <NavLink className="cart_page_button" to={`/checkout`}>
-          Continue
-        </NavLink>
+        {waifus.length === 0 ? (
+          ""
+        ) : (
+          <NavLink className="cart_page_button" to={`/checkout`}>
+            Continue
+          </NavLink>
+        )}
       </div>
     </div>
   );

@@ -59,3 +59,18 @@ li {
   border: #d05d1a double 3px;
   background-color: rgb(97, 87, 210);
 }
+
+.logout {
+  position: absolute;
+  border-radius: 10px;
+  background-color: rgb(47, 39, 39);
+  color: #d05d1a;
+  border: rgb(173, 64, 181) solid 3px;
+  right: 80px;
+  width: 80px;
+  height: 30px;
+}
+
+.none { 
+  display: none;
+}

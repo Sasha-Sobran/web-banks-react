@@ -4,12 +4,12 @@ import Navigation from "./navigation/js/navigation";
 
 function App() {
   return (
+    <div>
       <div>
-        <div>
-          <Navigation />
-        </div>
-        <Footer />
+        <Navigation />
       </div>
+      <Footer />
+    </div>
   );
 }
 

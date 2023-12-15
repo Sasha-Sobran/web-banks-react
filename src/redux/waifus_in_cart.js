@@ -1,12 +1,9 @@
-// waifusInCartSlice.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 export const waifusInCartSlice = createSlice({
   name: "waifusInCart",
   initialState: {
     waifus: [],
-    loading: false,
   },
   reducers: {
     addToCart: (state, action) => {
@@ -21,7 +18,6 @@ export const waifusInCartSlice = createSlice({
   },
 });
 
-export const { addToCart, removeFromCart, setWaifusInCart } =
-  waifusInCartSlice.actions;
+export const { addToCart, removeFromCart } = waifusInCartSlice.actions;
 
 export default waifusInCartSlice.reducer;

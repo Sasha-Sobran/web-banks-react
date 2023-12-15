@@ -1,0 +1,52 @@
+.form {
+  border: rgb(227, 98, 59) double 5px;
+  border-radius: 10px;
+  background-color: rgb(146, 54, 88);
+  color: antiquewhite;
+  height: 86%;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.register {
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.login {
+  display: flex;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  width: 250px;
+  height: 20px;
+}
+
+.up_button {
+  color: rgb(193, 160, 111);
+}
+
+.cursed_class {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 250px;
+}
+
+.field_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.error {
+  color: wheat;
+  font-size: 10px;
+}

@@ -41,10 +41,12 @@ const BankList = () => {
       setAges(data["ages"]);
     });
 
+    allItems();
+
     getPrices().then((data) => {
       setPrices(data["prices"]);
     });
-  }, []);
+  }, [allItems]);
 
   useEffect(() => {
     if (activeFilter !== "None") {
